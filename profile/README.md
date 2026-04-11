@@ -29,10 +29,6 @@ That's it. The CLI authenticates you, resolves credentials, launches your agent,
 | [kontext-cli](https://github.com/kontext-dev/kontext-cli) | CLI for AI coding agents — credential management, governance, and audit trails |
 | [proto](https://github.com/kontext-dev/proto) | Protocol buffer definitions — shared contract between CLI and API |
 | [skills](https://github.com/kontext-dev/skills) | Claude Code skills for the Kontext ecosystem |
-| [codex](https://github.com/kontext-dev/codex) | Lightweight coding agent that runs in your terminal |
-| [agent-browser](https://github.com/kontext-dev/agent-browser) | One connection for all your MCP servers |
-| [browser-use-mcp-server](https://github.com/kontext-dev/browser-use-mcp-server) | Browse the web, directly from Cursor and other AI clients |
-| [attestable-mcp-server](https://github.com/kontext-dev/attestable-mcp-server) | Verify MCP servers are running untampered code via hardware attestation |
 
 ## Get Involved
 
