@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/kontext-dev/kontext-cli/main/assets/banner-cli.png" alt="Kontext" width="auto" height="auto" style="margin-bottom: 20px;" />
+<img src="https://raw.githubusercontent.com/kontext-security/kontext-cli/main/assets/banner-cli.svg" alt="Kontext" width="100%" style="margin-bottom: 20px;" />
 
 ### Store Credentials. Inject At Runtime. Agents Never Store The Keys.
 
