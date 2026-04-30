@@ -2,7 +2,7 @@
 
 <img src="https://raw.githubusercontent.com/kontext-security/kontext-cli/main/assets/banner-cli.svg" alt="Kontext" width="100%" style="margin-bottom: 20px;" />
 
-### Store Credentials. Inject At Runtime. Agents Never Store The Keys.
+### Authorize At Runtime. Least Agency when it's most needed.
 
 [Website](https://kontext.security) &middot; [Documentation](https://kontext.security/docs) &middot; [Discord](https://discord.gg/gw9UpFUhyY)
 
@@ -13,7 +13,7 @@
 
 ## What is Kontext?
 
-Kontext is the identity and credential layer for AI coding agents. It replaces long-lived API keys in `.env` files with short-lived, scoped credentials that are injected at session start and expire when the session ends. Every tool call is logged, every secret is accounted for.
+Kontext runtime authorization for AI agents. It replaces long-lived API keys in `.env` files with short-lived, scoped credentials that are injected at runtime, and simultaneously analyzes the safety of chained up tool calls to block the ones that are dangerous. Every tool call is logged, every secret is accounted for, every action can be traced to the interaction that invoked it.
 
 ```bash
 brew install kontext-dev/tap/kontext
