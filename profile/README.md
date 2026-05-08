@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/kontext-security/kontext-cli/main/assets/banner-cli.svg" alt="Kontext" width="100%" style="margin-bottom: 20px;" />
+<img src="https://raw.githubusercontent.com/kontext-security/.github/main/profile/Kontext_Banner.png" alt="Kontext banner" width="100%" style="margin-bottom: 20px;" />
 
 ### Authorize At Runtime. Least Agency when it's most needed.
 
