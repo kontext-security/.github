@@ -6,8 +6,8 @@
 
 [Website](https://kontext.security) &middot; [Documentation](https://kontext.security/docs) &middot; [Discord](https://discord.gg/gw9UpFUhyY)
 
-[![GitHub Stars](https://img.shields.io/github/stars/kontext-dev/kontext-cli?style=social)](https://github.com/kontext-dev/kontext-cli/stargazers)
-[![Twitter](https://img.shields.io/twitter/follow/kontext_dev?style=social)](https://twitter.com/kontext_dev)
+[![GitHub Stars](https://img.shields.io/github/stars/kontext-security/kontext-cli?style=social)](https://github.com/kontext-security/kontext-cli/stargazers)
+[![Twitter](https://img.shields.io/twitter/follow/kontextsecurity?style=social)](https://twitter.com/kontextsecurity)
 
 </div>
 
