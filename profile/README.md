@@ -13,20 +13,18 @@
 
 ## What is Kontext?
 
-Kontext runtime authorization for AI agents. It replaces long-lived API keys in `.env` files with short-lived, scoped credentials that are injected at runtime, and simultaneously analyzes the safety of chained up tool calls to block the ones that are dangerous. Every tool call is logged, every secret is accounted for, every action can be traced to the interaction that invoked it.
+Kontext is an identity security platform for AI agents. 
+It helps teams observe what AI agents do, control what they can access and blocks agent trajectories before risky actions reach sensitive systems.
 
 ```bash
-brew install kontext-dev/tap/kontext
-kontext start --agent claude
+brew install kontext-security/tap/kontext
 ```
-
-That's it. The CLI authenticates you, resolves credentials, launches your agent, and streams governance telemetry to the Kontext dashboard.
 
 ## Open Source
 
 | Repository | Description |
 |---|---|
-| [kontext-cli](https://github.com/kontext-dev/kontext-cli) | CLI for AI coding agents — credential management, governance, and audit trails |
+| [kontext-cli](https://github.com/kontext-dev/kontext-cli) | Guard that governs agents on local machines |
 | [proto](https://github.com/kontext-dev/proto) | Protocol buffer definitions — shared contract between CLI and API |
 | [skills](https://github.com/kontext-dev/skills) | Claude Code skills for the Kontext ecosystem |
 
