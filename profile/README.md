@@ -6,7 +6,7 @@
 
 [Website](https://kontext.security) &middot; [Documentation](https://kontext.security/docs) &middot; [Discord](https://discord.gg/gw9UpFUhyY)
 
-[![GitHub Stars](https://img.shields.io/github/stars/kontext-security/kontext-cli?style=social)](https://github.com/kontext-security/kontext-cli/stargazers)
+[![GitHub Stars](https://img.shields.io/github/stars/kontext-security/kontext?style=social)](https://github.com/kontext-security/kontext/stargazers)
 [![Twitter](https://img.shields.io/twitter/follow/kontextsecurity?style=social)](https://twitter.com/kontextsecurity)
 
 </div>
