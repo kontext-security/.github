@@ -25,8 +25,8 @@ brew install kontext-security/tap/kontext
 
 | Repository | Description |
 |---|---|
-| [kontext-cli](https://github.com/kontext-dev/kontext-cli) | Real-time governance for agents with autonomous policy enforcement |
-| [skills](https://github.com/kontext-dev/skills) | Skills for Kontext |
+| [kontext](https://github.com/kontext-security/kontext) | Real-time governance for agents with autonomous policy enforcement |
+| [skills](https://github.com/kontext-security/agent-skills) | Agent skills for Kontext |
 
 ## Get Involved
 
