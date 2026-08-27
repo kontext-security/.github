@@ -1,8 +1,10 @@
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/kontext-security/.github/main/profile/Kontext_Banner.png" alt="Kontext banner" width="100%" style="margin-bottom: 20px;" />
+<img src="https://raw.githubusercontent.com/kontext-security/.github/main/profile/Kontext_Banner.png" alt="Kontext Security banner" width="100%" />
 
-### Secure AI agents on Endpoints and in the Cloud.
+### Identity, policy, and containment for AI agents.
+
+Secure agents across developer endpoints and cloud environments.
 
 [Website](https://kontext.security) &middot; [Documentation](https://kontext.security/docs) &middot; [Discord](https://discord.gg/gw9UpFUhyY)
 
@@ -11,25 +13,31 @@
 
 </div>
 
-## What is Kontext?
+## What We Build
 
-Kontext is an identity security platform for AI agents.
-It helps teams observe what AI agents do, control what they can access and blocks agent trajectories before risky actions reach sensitive systems.
-Enforcement is always deterministic, intent is evaluated in a contextual manner.
+Kontext Security builds open-source infrastructure for controlling AI agents at runtime.
+
+**Kontext** gives agents a runtime identity and evaluates their actions against policy using intent and execution context. Enforcement remains deterministic: disallowed actions are blocked before they reach protected systems.
+
+**Sandy** contains AI coding agents in a native macOS process sandbox with explicit filesystem and network permissions.
+
+## Install
 
 ```bash
 brew install kontext-security/tap/kontext
+brew install kontext-security/tap/sandy
 ```
 
 ## Open Source
 
 | Repository | Description |
 |---|---|
-| [kontext](https://github.com/kontext-security/kontext) | Real-time governance for agents with autonomous policy enforcement |
+| [kontext](https://github.com/kontext-security/kontext) | Runtime identity and deterministic policy enforcement for AI agents |
+| [sandy](https://github.com/kontext-security/sandy) | Native macOS process sandbox for AI coding agents |
 | [skills](https://github.com/kontext-security/agent-skills) | Agent skills for Kontext |
 
 ## Get Involved
 
-- Read the [docs](https://kontext.security/docs)
-- Join the [Discord](https://discord.gg/gw9UpFUhyY)
-- Follow us on [Twitter/X](https://twitter.com/kontext_dev)
+- Read the [documentation](https://kontext.security/docs)
+- Join the [Discord community](https://discord.gg/gw9UpFUhyY)
+- Follow [Kontext Security on X](https://twitter.com/kontextsecurity)
