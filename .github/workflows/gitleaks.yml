@@ -1,0 +1,63 @@
+name: gitleaks
+
+# Scans the commits a pull request adds for secrets. Meant to run on other
+# repositories of the organisation through an organisation ruleset
+# ("Require workflows to pass before merging"), which is why it lives here.
+on:
+  pull_request:
+  # A required check must also report in the merge queue.
+  merge_group:
+
+permissions:
+  contents: read
+
+jobs:
+  gitleaks:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          # The scan reads the commits between base and head, so it needs history.
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Install gitleaks
+        env:
+          GITLEAKS_VERSION: 8.30.1
+          GITLEAKS_SHA256: 551f6fc83ea457d62a0d98237cbad105af8d557003051f41f3e7ca7b3f2470eb
+        run: |
+          set -euo pipefail
+          archive="gitleaks_${GITLEAKS_VERSION}_linux_x64.tar.gz"
+          curl -fsSL -o "$RUNNER_TEMP/$archive" \
+            "https://github.com/gitleaks/gitleaks/releases/download/v${GITLEAKS_VERSION}/$archive"
+          echo "$GITLEAKS_SHA256  $RUNNER_TEMP/$archive" | sha256sum --check --strict
+          mkdir -p "$RUNNER_TEMP/gitleaks"
+          tar -xzf "$RUNNER_TEMP/$archive" -C "$RUNNER_TEMP/gitleaks" gitleaks
+          echo "$RUNNER_TEMP/gitleaks" >> "$GITHUB_PATH"
+
+      - name: Scan the new commits
+        env:
+          BASE: ${{ github.event.pull_request.base.sha || github.event.merge_group.base_sha }}
+          HEAD: ${{ github.event.pull_request.head.sha || github.event.merge_group.head_sha }}
+        run: |
+          set -euo pipefail
+          if [ -z "$BASE" ] || [ -z "$HEAD" ]; then
+            echo "The event carries no base or head commit; nothing was scanned." >&2
+            exit 1
+          fi
+          expected=$(git rev-list --count --no-merges "$BASE..$HEAD")
+          if [ "$expected" -eq 0 ]; then
+            echo "No commits besides merges between $BASE and $HEAD; nothing to scan."
+            exit 0
+          fi
+          log="$RUNNER_TEMP/gitleaks.log"
+          gitleaks git --redact --no-banner --no-color --log-opts="$BASE..$HEAD" . 2>&1 | tee "$log"
+          # gitleaks exits 0 when git cannot read the repository and reports
+          # "0 commits scanned", so a pass counts only if it scanned something.
+          scanned=$(sed -n 's/.*[[:space:]]\([0-9][0-9]*\) commits scanned.*/\1/p' "$log" | head -1)
+          if [ -z "$scanned" ] || [ "$scanned" -eq 0 ]; then
+            echo "gitleaks scanned ${scanned:-no} commits of $expected expected; it did not read the repository." >&2
+            exit 1
+          fi
